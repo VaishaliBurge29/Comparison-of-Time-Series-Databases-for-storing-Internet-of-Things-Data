@@ -1,0 +1,43 @@
+{
+  "type": "index",                               // Ingestion type: batch indexing job
+  "spec": {
+    "dataSchema": {
+      "dataSource": "sensor_data_2k",            // Name of the Druid datasource (table equivalent) — change for different datasets
+      "timestampSpec": {                         // Defines how Druid should interpret the timestamp column
+        "column": "timestamp",                   // Column in CSV containing the timestamp
+        "format": "yyyy-MM-dd HH:mm:ss.SSSZ"      // Timestamp format (must match your CSV)
+      },
+      "dimensionsSpec": {
+        "dimensions": ["sensor_id"]              // List of dimensions (categorical fields) to store
+      },
+      "metricsSpec": [                           // Defines metrics (aggregations) applied at ingestion
+        {
+          "name": "value",                        // Metric name in Druid
+          "type": "doubleSum",                    // Aggregation type (sum of all values for each time bucket)
+          "fieldName": "value"                    // Field in CSV containing the numeric data
+        }
+      ],
+      "granularitySpec": {                       // How data is partitioned and queried
+        "type": "uniform",                       // Uniform segment granularity
+        "segmentGranularity": "day",             // Each segment covers one day
+        "queryGranularity": "none",              // No pre-aggregation inside each segment
+        "rollup": false                          // Rollup disabled (store each row as-is)
+      }
+    },
+    "ioConfig": {
+      "type": "index",                           // Batch ingestion I/O config
+      "inputSource": {
+        "type": "local",                         // Data source is a local file
+        "baseDir": "/home/vburge",               // Directory containing the CSV file
+        "filter": "2k_datapoints.csv"            // Filename filter (change to match your dataset file)
+      },
+      "inputFormat": {
+        "type": "csv",                           // Input file format
+        "findColumnsFromHeader": true            // Automatically detect columns from CSV header row
+      }
+    },
+    "tuningConfig": {
+      "type": "index"                            // Use default tuning settings for batch indexing
+    }
+  }
+}
