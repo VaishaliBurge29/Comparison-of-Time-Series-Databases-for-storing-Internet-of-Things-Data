@@ -53,7 +53,7 @@ Python Code to Submit Ingestion Task
 **When to use:**  
 - When you only need to trigger ingestion and don’t require progress tracking.
 
-### **4. `query1_datapoints.py`**
+### **4. `pydruid_(script_4).py`**
 **Purpose:**  
 Queries ingested Druid data using the PyDruid SQL client.  
 
