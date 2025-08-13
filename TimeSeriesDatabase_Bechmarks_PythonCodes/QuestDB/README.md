@@ -8,7 +8,7 @@ Two ingestion approaches are provided:
 2. **Ingestion with a symbol column** – optimized for query performance on high-cardinality fields (e.g., `sensor_id`).
 
 
-## 📂 File Overview
+##  File Overview
 
 | File | Description |
 |------|-------------|
