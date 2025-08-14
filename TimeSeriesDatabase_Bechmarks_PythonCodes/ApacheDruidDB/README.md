@@ -11,7 +11,7 @@ This repository contains Python scripts and a JSON ingestion specification for i
 Submits a batch ingestion task to Druid and monitors its progress until completion.  
 
 **How it works:**  
-- Loads the ingestion specification from `csv_ingestion_2k.json`.
+- Loads the ingestion specification from `druid_(script_2).json`.
 - Sends the specification to the Druid Overlord endpoint (`:8081`).
 - Retrieves the generated task ID.
 - Polls the task status every 2 seconds until it reaches `SUCCESS` or `FAILED`.
