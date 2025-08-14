@@ -8,9 +8,9 @@ This folder contains three small Python/CLI utilities for working with **Graphit
 
 | File                        | Description |
 |-----------------------------|-------------|
-| `graphite_backdate_whisper.py` | **Script 1:** Creates backdated `.wsp` files so that historical data is not dropped by Whisper’s retention ring buffer. |
-| `graphite_inject_historical.py` | **Script 2:** Reads timestamped sensor values from a CSV file and injects them into the corresponding Whisper files created by Script 1. |
-| `graphite_realtime_carbon.sh`   | **Script 3:** Sends real-time datapoints directly to Graphite using the Carbon plaintext protocol (`netcat`). |
+| `create_wsp_backdated.py` | **Script 1:** Creates backdated `.wsp` files so that historical data is not dropped by Whisper’s retention ring buffer. |
+| `send_to_graphite_5points.py` | **Script 2:** Reads timestamped sensor values from a CSV file and injects them into the corresponding Whisper files created by Script 1. |
+| `send_realtime_graphite_netcat`   | **Script 3:** Sends real-time datapoints directly to Graphite using the Carbon plaintext protocol (`netcat`). |
 
 ---
 
