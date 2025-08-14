@@ -14,3 +14,10 @@ The code is identical for both — only the **table setup** differs:
 |------|-------------|
 | `postgres_timescale_ingest.py` | Python script to load CSV sensor data into PostgreSQL or TimescaleDB, with ingestion time measurement. |
 
+##  Requirements
+
+- **Python 3.x**
+- PostgreSQL or TimescaleDB installed and running (local or remote)
+- Python dependencies:
+  ```bash
+  pip install psycopg2 pandas
