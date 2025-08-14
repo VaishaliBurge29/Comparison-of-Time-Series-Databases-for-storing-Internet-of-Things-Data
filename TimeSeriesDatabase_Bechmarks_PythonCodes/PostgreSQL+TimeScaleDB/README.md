@@ -13,7 +13,7 @@ The code is identical for both — only the **table setup** differs:
 
 | File | Description |
 |------|-------------|
-| `postgres_timescale_ingest.py` | Python script to load CSV sensor data into PostgreSQL or TimescaleDB, with ingestion time measurement. |
+| `postgresql+timescale.py` | Python script to load CSV sensor data into PostgreSQL or TimescaleDB, with ingestion time measurement. |
 
 ---
 
