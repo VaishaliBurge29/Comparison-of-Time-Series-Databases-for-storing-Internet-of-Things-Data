@@ -4,7 +4,7 @@ This repository contains Python scripts and a JSON ingestion specification for i
 
 ---
 
-## 📄 File Overview
+## File Overview
 
 ### **1. `druid_(script_1).py`**
 **Purpose:**  
