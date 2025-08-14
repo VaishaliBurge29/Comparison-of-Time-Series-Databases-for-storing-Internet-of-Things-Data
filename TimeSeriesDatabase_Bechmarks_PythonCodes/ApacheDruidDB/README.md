@@ -39,14 +39,13 @@ Ingestion Specification (JSON).Defines the ingestion configuration for loading a
 **Important:**  
 - Change `dataSource` and `filter` values to match your dataset.
 - Ensure `timestampSpec.format` matches your CSV file’s timestamp format.
-- 
-
+  
 ### **3. `druid_(script_3).py`**
 **Purpose:**  
 Python Code to Submit Ingestion Task
 
 **How it works:**  
-- Loads `csv_ingestion_2k.json`.
+- Loads `druid_(script_2).json`.
 - Sends it to the Overlord API (`:8081`).
 - Prints the returned JSON (usually contains the `task` ID).
 
@@ -55,7 +54,7 @@ Python Code to Submit Ingestion Task
 
 ### **4. `pydruid_(script_4).py`**
 **Purpose:**  
-Queries ingested Druid data using the PyDruid SQL client.  
+Queries ingested Druid data using the PyDruid SQL client.  Used this as the second method to retrieve data using PyDruid
 
 **How it works:**  
 - Connects to the Druid Broker service (`:8082`).
