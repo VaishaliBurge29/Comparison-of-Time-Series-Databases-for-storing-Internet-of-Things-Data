@@ -1,10 +1,10 @@
-# 📂 Graphite / Whisper: Backdated + Real-Time Injection
+# Graphite / Whisper: Backdated + Real-Time Injection
 
 This folder contains three small Python/CLI utilities for working with **Graphite** and its **Whisper** storage engine. These scripts cover both **historical backfilling** and **real-time ingestion** of time-series data.
 
 ---
 
-## 📄 File Overview
+##  File Overview
 
 | File                        | Description |
 |-----------------------------|-------------|
@@ -14,7 +14,7 @@ This folder contains three small Python/CLI utilities for working with **Graphit
 
 ---
 
-## ⚙️ Requirements
+##  Requirements
 
 - Python 3.x (for Scripts 1 & 2)
 - `whisper` Python package (ships with Graphite)
@@ -29,9 +29,9 @@ This folder contains three small Python/CLI utilities for working with **Graphit
 
 ---
 
-## 🚀 Usage
+## Usage
 
-### 1️⃣ Creating Backdated Whisper Files (Script 1)
+### Creating Backdated Whisper Files (Script 1)
 Use this **once per metric** to create `.wsp` files with a **fake "now" timestamp** so older historical data won’t be discarded.
 ```bash
 python graphite_backdate_whisper.py
