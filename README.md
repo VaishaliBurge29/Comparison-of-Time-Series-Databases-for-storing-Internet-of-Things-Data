@@ -1,57 +1,34 @@
 # IoT Time-Series Database Benchmarking Framework
 
-This repository contains the full code, configurations, and scripts used in the benchmarking study from the paper:
+The Internet of Things (IoT) connects a vast network of devices that continuously generate large volumes of time-stamped data. Extracting value from such data requires storage systems optimized for high-frequency, append-only workloads. This study compares five Time-Series Databases (TSDBs) – InfluxDB, TimescaleDB, QuestDB, Apache Druid, Graphite – alongside one relational SQL system (PostgreSQL) and one NoSQL system (Cassandra). The focus is on data ingestion performance in a private cloud environment using a standardized IoT dataset.
 
-> **"Performance Evaluation of SQL and NoSQL Time-Series Databases for IoT Data Ingestion and Querying"**  
-> Evaluates ingestion speed, query latency, and optimization strategies across multiple database systems using synthetic IoT datasets.
+Note: This repository only contains ingestion scripts for each database. Query benchmarking, visualization, and analysis are documented separately in the main thesis but are not part of this code repository.
 
-The experiments compare relational, time-series, and NoSQL databases under identical workloads.  
-Benchmarks include:
-- **Raw ingestion** and **optimized ingestion**
-- **Query latency** across six representative queries (Q1–Q6)
-- Multiple dataset sizes (5 rows, 2,000 rows, 500,000 rows)
 
 ##  Repository Structure
 
+├── InfluxDB/
+│   ├── ingest_influxdb.py
+│   └── README.md
+├── TimescaleDB/
+│   ├── ingest_timescaledb.py
+│   └── README.md
+├── PostgreSQL/
+│   ├── ingest_postgres.py
+│   └── README.md
+├── QuestDB/
+│   ├── ingest_questdb.py
+│   └── README.md
+├── Cassandra/
+│   ├── ingest_cassandra.py
+│   └── README.md
+├── Druid/
+│   ├── ingest_druid.py
+│   └── README.md
+├── Graphite/
+│   ├── ingest_graphite.py
+│   └── README.md
 
----
-
-## 🗂 Folder & File Details
-
-### **1. Cassandra**
-- **`ingestion/`** – Python scripts to insert CSV data into Cassandra for different dataset sizes.
-- **`queries/`** – Benchmark queries implemented in Python using the Cassandra driver.
-- **`cassandra_schema.cql`** – Schema definition for `sensor_readings` table.
-
-### **2. Druid**
-- **`ingestion_specs/`** – JSON specs for batch ingestion tasks via Druid Overlord.
-- **`submit_ingestion.py`** – Sends ingestion tasks to Druid.
-- Designed for **2k** and **500k** dataset ingestion.
-
-### **3. Graphite**
-- **Script 1** – Create `.wsp` Whisper files for backdated data.
-- **Script 2** – Inject historical CSV data into existing Whisper files.
-- **Script 3** – Real-time ingestion using Carbon plaintext protocol + `netcat`.
-
-### **4. InfluxDB**
-- **`influxdb_ingest.py`** – Python ingestion using official InfluxDB v2 client.
-- **`telegraf.conf`** – Telegraf-based ingestion from CSV for large datasets.
-
-### **5. PostgreSQL / TimescaleDB**
-- **`ingest_csv.py`** – Common ingestion script for both databases (change DB name and table).  
-  TimescaleDB requires hypertable creation & optional compression (see README.md inside).
-
-### **6. QuestDB**
-- **`5rows_file.py`** – Upload CSV without Symbol indexing.
-- **`5rows_file_with_symbol.py`** – Upload CSV with Symbol column for indexing.
-
-### **7. Data**
-- Contains the benchmark datasets:  
-  - `5_datapoints.csv` (small-scale)  
-  - `2k_datapoints.csv` (medium-scale)  
-  - `500k_datapoints.csv` (large-scale)
-
----
 
 ## 🚀 How to Use
 
@@ -61,8 +38,6 @@ Benchmarks include:
 4. **Run ingestion scripts** to insert data.
 5. **Run query scripts** to measure query latency.
 6. **Record results** for comparison.
-
----
 
 ## 📊 Benchmarked Databases
 
