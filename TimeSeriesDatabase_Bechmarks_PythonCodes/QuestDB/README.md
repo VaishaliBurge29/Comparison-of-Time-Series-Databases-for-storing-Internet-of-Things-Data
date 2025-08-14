@@ -16,3 +16,10 @@ Two ingestion approaches are provided:
 | `questdb(script_2).py` | Uploads a CSV file with `sensor_id` as a symbol column for indexing. |
 
 
+##  Requirements
+
+- **Python 3.x**
+- QuestDB running locally or remotely (Docker, binary, or cloud)
+- Python dependencies:
+  ```bash
+  pip install pandas questdb
