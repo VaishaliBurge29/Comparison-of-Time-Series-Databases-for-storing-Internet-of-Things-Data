@@ -11,8 +11,8 @@ This repository contains two methods to ingest CSV-based time-series data into *
 
 | File | Description |
 |------|-------------|
-| `influxdb_ingest.py` | Python script to insert CSV data into InfluxDB v2 using synchronous API writes. |
-| `telegraf.conf` | Telegraf configuration file for bulk CSV ingestion into InfluxDB v2. Optimized for throughput.|
+| `influx_ingestion.py` | Python script to insert CSV data into InfluxDB v2 using synchronous API writes. |
+| `influx_telegraf.conf` | Telegraf configuration file for bulk CSV ingestion into InfluxDB v2. Optimized for throughput.|
 
 ---
 
