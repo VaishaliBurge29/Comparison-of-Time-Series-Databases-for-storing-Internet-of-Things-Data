@@ -25,15 +25,14 @@ if res.status_code != 200:
 task_id = res.json()["task"]
 print(f"Task submitted! Task ID: {task_id}")
 
-# Poll Druid for task status until it completes
-status_url = f"http://localhost:8081/druid/indexer/v1/task/{task_id}/status"
-while True:
-    time.sleep(2)  # Wait before checking again to reduce API calls
-    status_res = requests.get(status_url)
-
-    # If unable to fetch status, stop execution
-    if status_res.status_code != 200:
-        print("Failed to fetch task status:", status_res.text)
-        exit(1)
-
-    # Extract the "status" fi
+# Poll for task status
+status_url = f"http://localhost:8081/druid/indexer/v1/task/{task_id}/ status"
+while True: time.sleep(2)
+status_res = requests.get(status_url) if status_res.status_code != 200:
+print("Failed to fetch task status:", status_res.text)
+exit (1)
+status = status_res.json().get("status", {}).get("status") print(f" Current status: {status}")
+if status in ["SUCCESS", "FAILED"]:
+break
+end = time.time()
+print(f"Total ingestion time: {end - start:.2f} seconds") print(f"Final status: {status}")
