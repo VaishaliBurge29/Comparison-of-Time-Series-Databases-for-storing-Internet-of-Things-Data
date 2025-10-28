@@ -2,6 +2,9 @@
 
 This folder contains the dataset files used for the benchmarking experiments in the thesis *"Comparison of Time-Series Databases for Storing Internet-of-Things Data"*.
 
+## Raw Data
+The full 5 GB dataset used in this thesis is stored in the UniConnect folder
+(access available upon request or via Prof. Blazevic).
 
 ## 📄 Files
 
