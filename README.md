@@ -35,4 +35,3 @@ Note: This repository only contains ingestion scripts for each database. Query b
 - Graphite (excluded from some results due to disk usage limits)
 - Apache Cassandra  
 
-For information on my thesis paper : link 
